@@ -13,17 +13,23 @@ using namespace std;
 // function prototypes - declaration of the func that tells the program about the tyoe of
 // val returned by the func
 void bubbleSort(int[], int);
+void selectionSort(int[], int);
 void swap(int &, int &);
 
 // marks beginning of a function
-int main(){
- 
+int main()
+{
  const int SIZE = 6;
- 
+
+ int nums[SIZE] = { 6, 1, 5, 7, 4, 8 };
+
  int values[SIZE] = { 6, 1, 5, 2, 4, 3 };
+
 
 // sort the array
 bubbleSort(values, SIZE);
+
+selectionSort(nums, SIZE);
 
 // display the sorted array
 cout << "The sorted values: \n";
@@ -31,9 +37,15 @@ for (auto element : values)
   cout << element << " ";
 cout << endl;
 
+cout << "The sorted nums: \n";
+for (auto element : nums)
+  cout << element << " ";
+cout << endl;
+
 return 0;
 }
 
+// bubblesort in acensding order
 void bubbleSort(int array[], int size) {
   int maxElement;
   int index;
@@ -44,9 +56,32 @@ void bubbleSort(int array[], int size) {
         swap(array[index], array[index + 1]);
       }
     }
+  };
+}
+ // selectionSort in ascending order
+void selectionSort(int array[], int size)
+{
+  int minIndex, minValue;
+
+  for ( int start = 0; start < (size - 1); start++)
+  {
+    minIndex = start;
+    minValue = array[start];
+    for (int index = start + 1; index < size; index++)
+    {
+      if (array[index] < minValue)
+      {
+        minValue = array[index];
+        minIndex = index;
+      }
+    }
+    swap(array[minIndex], array[start]);
   }
 }
 
+
+
+// swap func swaps a and b in memory
 void swap(int &a, int &b) {
   int temp = a;
   a = b;
