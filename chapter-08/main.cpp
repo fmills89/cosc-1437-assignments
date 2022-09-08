@@ -1,3 +1,8 @@
+
+// Write a program that uses two identical arrays of at least 20 integers. It should call a function that uses the bubble sort algorithm to sort one of the arrays in ascending order. The function should keep a count of the number of exchanges it makes. The program then should call a function that uses the selection sort algorithm to sort the other array. It should also keep count of the number of exchanges it makes. Display these values on the screen.
+
+
+
 // preprocessor directive - reads your program before it is complied
 #include <iostream>
 
@@ -13,9 +18,9 @@ void swap(int &, int &);
 // marks beginning of a function
 int main(){
  
- const int SIZE = 20;
+ const int SIZE = 6;
  
- int values[SIZE] = {9, 10, 64, 92, 43, 2, 49, 21, 85, 30, 12, 40, 42, 34, 51, 33, 97, 24, 95, 86};
+ int values[SIZE] = { 6, 1, 5, 2, 4, 3 };
 
 // sort the array
 bubbleSort(values, SIZE);
